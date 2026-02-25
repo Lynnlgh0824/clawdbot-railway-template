@@ -6,8 +6,8 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "node src/server.js",
-    "start": "node src/server.js",
+    "dev": "PORT=8080 node src/server.js",
+    "start": "PORT=8080 node src/server.js",
     "lint": "node -c src/server.js",
     "smoke": "node scripts/smoke.js"
   },
