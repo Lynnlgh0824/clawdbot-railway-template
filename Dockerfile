@@ -20,8 +20,9 @@ RUN corepack enable
 
 WORKDIR /openclaw
 
-# Pin to a known ref (tag/branch). If it doesn't exist, fall back to main.
-ARG OPENCLAW_GIT_REF=main
+# Pin to a specific release tag for reproducible builds.
+# Override at build time with: --build-arg OPENCLAW_GIT_REF=<tag>
+ARG OPENCLAW_GIT_REF=v2026.7.2-beta.5
 RUN git clone --depth 1 --branch "${OPENCLAW_GIT_REF}" https://github.com/openclaw/openclaw.git .
 
 # Patch: relax version requirements for packages that may reference unpublished versions.
